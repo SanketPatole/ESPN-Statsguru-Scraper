@@ -10,7 +10,7 @@ match_types = {'Test': '1', 'ODI': '2', 'T20': '3', 'All': '11',
 
 
 class espncricket:
-    def __init__(self, data_type='batting', match_type='Test', view_type='series'):
+    def __init__(self, data_type='batting', match_type='Test', view_type=''):
         self.data_type = data_type
         self.match_type = match_types[match_type]
         self.view_type = view_type
