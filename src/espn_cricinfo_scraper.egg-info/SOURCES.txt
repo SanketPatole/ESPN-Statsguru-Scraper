@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+src/espn_cricinfo_scraper.egg-info/PKG-INFO
+src/espn_cricinfo_scraper.egg-info/SOURCES.txt
+src/espn_cricinfo_scraper.egg-info/dependency_links.txt
+src/espn_cricinfo_scraper.egg-info/requires.txt
+src/espn_cricinfo_scraper.egg-info/top_level.txt
