@@ -9,7 +9,7 @@ match_types = {'Test': '1', 'ODI': '2', 'T20': '3', 'All': '11',
                'Test_Youth': '20', 'ODI_Youth': '21', 'T20_Youth': '22'}
 
 
-class espn_cricinfo_scraper:
+class espncricket:
     def __init__(self, data_type='batting', match_type='Test', view_type='series'):
         self.data_type = data_type
         self.match_type = match_types[match_type]

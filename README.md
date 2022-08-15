@@ -16,7 +16,7 @@ This repository contains the codebase, which can be used to scrape all-time cric
 ## How to run the code
 
 ```
-import espn_cricinfo_scraper.espn_cricinfo_scraper as ecs
+import espncricket.espncricket as ecs
 
 df = ecs.get_score()
 print(df.head())

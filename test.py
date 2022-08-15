@@ -1,7 +1,6 @@
-from espn_cricinfo_scraper import ESPNScraper as es
+from espncricket import espncricket as es
 
 df = es().get_score()
 
 print(df.info())
 
-print(df.head())
