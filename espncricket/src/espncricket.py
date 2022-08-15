@@ -47,9 +47,9 @@ class espncricket:
         except:
             self.fetch_data(page_num)
 
-    def get_score(self):
+    def get_score(self, number_of_pages=99999):
         self.result_set = pd.DataFrame()
-        number_of_pages = self.get_number_of_pages()
+        number_of_pages = min(self.get_number_of_pages(), number_of_pages)
         self.list_of_dataframes = [pd.DataFrame() for _ in range(number_of_pages)]
         threads = [threading.Thread(target=self.fetch_data, args=(page_num+1,)) for page_num in range(number_of_pages)]
 

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: espncricket
-Version: 0.0.1
+Version: 0.0.10
 Summary: ESPN Cricinfo Scraper
 Home-page: https://github.com/SanketPatole/ESPN-Statsguru-Scraper
 Author: Sanket Patole
@@ -38,6 +38,11 @@ This repository contains the codebase, which can be used to scrape all-time cric
 
 * You need to install Python with version 3.0 or more. You can find the latest version of Python at https://www.python.org/downloads/
 
+* Install the library as follows.
+
+```
+pip install espncricket
+```
 
 ## How to run the code
 

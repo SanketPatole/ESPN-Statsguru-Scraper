@@ -1,6 +1,3 @@
-from espncricket import espncricket as es
+from espncricket import *
 
-df = es().get_score()
-
-print(df.info())
-
+print(type(espncricket()))
