@@ -12,6 +12,11 @@ This repository contains the codebase, which can be used to scrape all-time cric
 
 * You need to install Python with version 3.0 or more. You can find the latest version of Python at https://www.python.org/downloads/
 
+* Install the library as follows.
+
+```
+pip install espncricket
+```
 
 ## How to run the code
 
