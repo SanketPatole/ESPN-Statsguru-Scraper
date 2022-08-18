@@ -1,3 +1,6 @@
 from espncricket import *
 
-print(type(espncricket()))
+c = espncricket(view_type='host')
+
+print(c.get_score(5))
+

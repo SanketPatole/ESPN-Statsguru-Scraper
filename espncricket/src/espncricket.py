@@ -43,7 +43,7 @@ class espncricket:
             url = self.build_url(page_num=page_num)
             url_object = self.get_url_object_with_agent(url)
             data = pd.read_html(url_object)[2]
-            if self.view_type != "":
+            if self.view_type in ['series', 'ground', 'host', 'opposition']:
                 new_column_names = list(data.columns) + [self.view_type]
                 data = pd.concat([data.iloc[:-2:2].reset_index(drop=True),
                                   data.iloc[1:-2:2].iloc[:, 0].reset_index(drop=True)], axis=1)
