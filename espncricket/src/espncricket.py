@@ -43,7 +43,12 @@ class espncricket:
             url = self.build_url(page_num=page_num)
             url_object = self.get_url_object_with_agent(url)
             data = pd.read_html(url_object)[2]
-            self.list_of_dataframes[page_num-1] = data
+            if self.view_type != "":
+                new_column_names = list(data.columns) + [self.view_type]
+                data = pd.concat([data.iloc[:-2:2].reset_index(drop=True),
+                                  data.iloc[1:-2:2].iloc[:, 0].reset_index(drop=True)], axis=1)
+                data.columns = new_column_names
+            self.list_of_dataframes[page_num - 1] = data
         except:
             self.fetch_data(page_num)
 
@@ -51,12 +56,13 @@ class espncricket:
         self.result_set = pd.DataFrame()
         number_of_pages = min(self.get_number_of_pages(), number_of_pages)
         self.list_of_dataframes = [pd.DataFrame() for _ in range(number_of_pages)]
-        threads = [threading.Thread(target=self.fetch_data, args=(page_num+1,)) for page_num in range(number_of_pages)]
+        threads = [threading.Thread(target=self.fetch_data, args=(page_num + 1,)) for page_num in
+                   range(number_of_pages)]
 
         for thread in threads:
             thread.start()
 
         for thread in threads:
             thread.join()
-
-        return pd.concat(self.list_of_dataframes, axis=0, ignore_index=True)
+        result = pd.concat(self.list_of_dataframes, axis=0, ignore_index=True)
+        return result[[col for col in result.columns if 'Unnamed' not in col]]
