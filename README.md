@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This repository contains the codebase, which can be used to scrape all-time cricket statistics from ESPN Cricinfo.
+An easy-to-use python scraper to pull all-time cricket statistics from ESPN Cricinfo.
 
 
 ## Prerequisites
@@ -21,7 +21,7 @@ pip install espncricket
 ## How to run the code
 
 ```
-import espncricket.ESPN
+import espncricket.ESPN as ESPN
 
 df = ESPN().get_score()
 print(df.head())
