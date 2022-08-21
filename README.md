@@ -10,7 +10,7 @@ This repository contains the codebase, which can be used to scrape all-time cric
 
 ### Python requirements
 
-* You need to install Python with version 3.0 or more. You can find the latest version of Python at https://www.python.org/downloads/
+* You need to install Python with version 3.4 or more. You can find the latest version of Python at https://www.python.org/downloads/
 
 * Install the library as follows.
 
@@ -21,11 +21,11 @@ pip install espncricket
 ## How to run the code
 
 ```
-import espncricket.espncricket as ecs
+import espncricket.ESPN
 
-df = ecs.get_score()
+df = ESPN().get_score()
 print(df.head())
- 
+
 ```
 
 * After successful execution, pandas dataframe object is returned.
