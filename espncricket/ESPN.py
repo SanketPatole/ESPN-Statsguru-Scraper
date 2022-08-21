@@ -1,6 +1,7 @@
 import pandas as pd
-import threading
+#import threading
 from .request_utilities import Request
+from .multithreading_utilities import MultiThread
 
 
 class ESPN:
@@ -14,7 +15,6 @@ class ESPN:
         self.view_type = view_type
         self.template = 'results'
         self.result_set = pd.DataFrame()
-        self.lock = threading.Lock()
         self.list_of_dataframes = []
 
     def __get_number_of_pages(self):
@@ -41,13 +41,17 @@ class ESPN:
         self.result_set = pd.DataFrame()
         number_of_pages = min(self.__get_number_of_pages(), number_of_pages)
         self.list_of_dataframes = [pd.DataFrame() for _ in range(number_of_pages)]
-        threads = [threading.Thread(target=self.__fetch_data, args=(page_num + 1,)) for page_num in
-                   range(number_of_pages)]
+        #threads = [threading.Thread(target=self.__fetch_data, args=(page_num + 1,)) for page_num in
+                   #range(number_of_pages)]
+        function_arguments = [page_num+1 for page_num in range(number_of_pages)]
+        MultiThread.MultiThread(function=self.__fetch_data, arguments=function_arguments).run()
+        result = pd.concat(self.list_of_dataframes, axis=0, ignore_index=True)
+        return result[[col for col in result.columns if 'Unnamed' not in col]]
 
+'''
         for thread in threads:
             thread.start()
 
         for thread in threads:
             thread.join()
-        result = pd.concat(self.list_of_dataframes, axis=0, ignore_index=True)
-        return result[[col for col in result.columns if 'Unnamed' not in col]]
+'''

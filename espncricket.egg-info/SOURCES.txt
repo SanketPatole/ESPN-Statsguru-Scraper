@@ -8,5 +8,7 @@ espncricket.egg-info/SOURCES.txt
 espncricket.egg-info/dependency_links.txt
 espncricket.egg-info/requires.txt
 espncricket.egg-info/top_level.txt
+espncricket/multithreading_utilities/MultiThread.py
+espncricket/multithreading_utilities/__init__.py
 espncricket/request_utilities/Request.py
 espncricket/request_utilities/__init__.py
