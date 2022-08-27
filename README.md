@@ -27,7 +27,7 @@ df = ESPN().get_score()
 print(df.head())
 
 #By default it returns Test batting statistics for men only.
-#You can also tweak following parameters to get custom results.
+#You can also tweak following parameters to get custom results of your choice.
 '''
 match_type='ODI_Women'
 data_type='bowling'
