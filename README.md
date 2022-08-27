@@ -25,15 +25,17 @@ import espncricket.ESPN as ESPN
 
 df = ESPN().get_score()
 print(df.head())
+```
 
-#By default it returns Test batting statistics for men only.
-#You can also tweak following parameters to get custom results of your choice.
-'''
-match_type='ODI_Women'
-data_type='bowling'
-view_type="series"
-number_of_pages=10
-'''
+### By default it returns Test batting statistics for men only.
+### But, you can also tweak following parameters to get custom results of your own choice.
+
+* match_type='ODI_Women'
+* data_type='bowling'
+* view_type="series"
+* number_of_pages=10
+
+```
 
 ESPN_object = ESPN(match_type='ODI_Women', data_type='bowling', view_type="series")
 odi_batting_scores_for_women_per_series_with_10_pages_only = ESPN_object.get_score(number_of_pages)
